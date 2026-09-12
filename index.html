@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Relay</title>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+    
+    <style>
+        /* Cero márgenes y desbordamiento oculto para encajar perfecto en un iframe */
+        html, body { 
+            margin: 0; 
+            padding: 0; 
+            width: 100%; 
+            height: 100%; 
+            overflow: hidden; 
+            background-color: #000; /* Fondo negro puro */
+        }
+        #reproductor-tv {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="reproductor-tv"></div>
+
+    <script>
+        var player = new Clappr.Player({
+            source: "https://astl-mainstr.qvixsolutions.com/asltvtu_ext/index.m3u8",
+            parentId: "#reproductor-tv",
+            mimeType: "application/x-mpegURL",
+            width: '100%',
+            height: '100%',
+            autoPlay: false,
+            mute: false
+        });
+    </script>
+</body>
+</html>
